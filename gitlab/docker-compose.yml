@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    image: 'twang2218/gitlab-ce-zh:11.1.4'
+    restart: always
+    hostname: '118.31.122.157'                                 #gitlab所在服务器ip
+    container_name: t-gitlab
+    environment:
+      TZ: 'Asia/Shanghai'
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://118.31.122.157:8843'              #gitlab暴露的访问地址
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222           
+        unicorn['port'] = 8889                                      
+        nginx['listen_port'] = 8843                            #gitlab暴露的访问地址
+    ports:
+      - '8843:8843'                                            #容器ip映射
+      - '8456:443'
+      - '8956:22'
+    volumes:
+      - /usr/local/docker/t-gitlab/config:/etc/gitlab
+      - /usr/local/docker/t-gitlab/data:/var/opt/gitlab
+      - /usr/local/docker/t-gitlab/logs:/var/log/gitlab

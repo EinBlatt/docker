@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mars-server-service-user-consumer:
+    image: 118.31.122.157:5000/mars-server-service-user-consumer:v1.0.0
+    container_name: mars-server-service-user-consumer
+    ports:
+    - 8105:8105  #http
+    - 21885:21885
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: mars  #net

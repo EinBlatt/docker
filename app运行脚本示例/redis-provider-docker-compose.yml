@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  zeus-server-service-redis-provider:
+    image: 49.233.78.39:5000/zeus-service-redis-provider:v1.0.0
+    container_name: zeus-service-redis-provider
+    ports:
+    - 7211:7211  #http
+    - 22993:22993 #dubbo
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: zeus  #net
+
+
+

@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  zeus-server-service-admin-provider:
+    image: 49.233.78.39:5000/zeus-server-service-admin-consumer:v1.0.0
+    container_name: zeus-server-service-admin-consumer
+    ports:
+    - 7212:7212  #http
+    - 22890:22890 #dubbo
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: zeus  #net

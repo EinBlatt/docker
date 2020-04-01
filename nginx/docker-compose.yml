@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  nginx:
+    restart: always
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80                                                #暴露容器端口 宿主机=>容器  这里暴露了http 和 https 的默认端口
+      - 443:443
+    volumes:                                                 #使用数据卷挂载
+      - ./conf/ng.key:/etc/nginx/ng.key                      #将宿主机文件挂载到容器中  (这里挂载了某个网站的ssl证书)
+      - ./conf/ng.pem:/etc/nginx/ng.pem 
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf              #nginx核心配置文件
+      - ./wwwroot:/usr/share/nginx/wwwroot                   #前端打包好的项目 一般是dist文件夹     如果想使用nginx代理多个项目,继续创建新文件夹挂载到容器即可 就像下面
+      - ./officialweb:/usr/share/nginx/officialweb           #示例

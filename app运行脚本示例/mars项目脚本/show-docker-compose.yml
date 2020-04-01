@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mars-service-show:
+    image: 118.31.122.157:5000/mars-service-show:v1.0.0
+    container_name: mars-service-show
+    ports:
+    - 8888:8888  #http
+    environment:
+      TZ: Asia/Shanghai      
+networks:
+  default:
+    external:
+      name: mars  
+      

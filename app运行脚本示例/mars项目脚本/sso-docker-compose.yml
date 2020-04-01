@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  mars-service-sso:
+    image: 118.31.122.157:5000/mars-service-sso:v1.0.0
+    container_name: mars-service-sso
+    ports:
+    - 8103:8103  #http
+    - 21221:22222  #运维
+    - 21883:21883
+    environment:
+      TZ: Asia/Shanghai      
+      DUBBO_IP_TO_REGISTRY: 172.16.123.20
+      DUBBO_PORT_TO_REGISTRY: 21883
+      DUBBO_PORT_TO_BIND: 21883
+networks:
+  default:
+    external:
+      name: mars  #net
+      

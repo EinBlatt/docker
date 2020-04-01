@@ -1,0 +1,18 @@
+version: '2'
+services:
+ 
+  #rabbitmq container
+  rabbitmq:
+    #setup host name
+    hostname: myrabbitmq
+    #use docker images
+    image: rabbitmq:management
+    #ports setting
+    ports:
+      - 15672:15672         #控制台暴露的端口
+      - 5672:5672
+    restart: always
+    #volumes setting
+    volumes:
+      - ./data:/var/lib/rabbitmq
+

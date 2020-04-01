@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  mars-service-alioss:
+    image: 118.31.122.157:5000/mars-service-alioss:v1.0.0
+    container_name: mars-service-alioss
+    ports:
+    - 8102:8102  #http
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: mars  #net

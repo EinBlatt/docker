@@ -1,0 +1,8 @@
+{
+  "registry-mirrors": [
+    "https://registry.docker-cn.com"       #运行在docker容器内的runner 镜像加速器
+  ],
+  "insecure-registries": [
+    "118.31.122.157:5000"                  #docker镜像仓库 
+  ]
+}

@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mars-server-service-pay-consumer:
+    image: 118.31.122.157:5000/mars-server-service-pay-consumer:v1.0.0
+    container_name: mars-server-service-pay-consumer
+    ports:
+    - 8107:8107  #http
+    - 21887:21887
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: mars  #net

@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mars-server-service-pay-provider:
+    image: 118.31.122.157:5000/mars-server-service-pay-provider:v1.0.0
+    container_name: mars-server-service-pay-provider
+    ports:
+    - 8106:8106  #http
+    - 21886:21886
+    environment:
+      TZ: Asia/Shanghai
+networks:
+  default:
+    external:
+      name: mars  #net
