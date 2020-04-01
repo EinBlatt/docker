@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   mars-service-sso:
-    image: 118.31.122.157:5000/mars-service-sso:v1.0.0
+    image: ip:5000/mars-service-sso:v1.0.0
     container_name: mars-service-sso
     ports:
     - 8103:8103  #http

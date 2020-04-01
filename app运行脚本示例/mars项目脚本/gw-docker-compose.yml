@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   mars-service-gateway:
-    image: 118.31.122.157:5000/mars-service-gateway:v1.0.0
+    image: ip:5000/mars-service-gateway:v1.0.0
     container_name: mars-service-gateway
     ports:
     - 10101:10101

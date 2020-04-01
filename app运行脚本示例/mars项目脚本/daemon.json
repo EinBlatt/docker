@@ -1,6 +1,6 @@
 {
   "registry-mirrors": ["http://f1361db2.m.daocloud.io"],
   "insecure-registries": [
-    "118.31.122.157:5000"
+    "ip:5000"
   ]
 }
