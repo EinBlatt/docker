@@ -8,10 +8,10 @@ services:
     - 20881:20881
     environment:
         # 注册到注册中心的IP，这里我们选择宿主机的IP
-      DUBBO_IP_TO_REGISTRY: 172.16.123.19
+      #DUBBO_IP_TO_REGISTRY: 172.16.123.19
         # 注册到注册中心的端口
-      DUBBO_PORT_TO_REGISTRY: 20881
-      DUBBO_PORT_TO_BIND: 20881
+      #DUBBO_PORT_TO_REGISTRY: 20881
+      #DUBBO_PORT_TO_BIND: 20881
       TZ: Asia/Shanghai
 networks:
   default:
